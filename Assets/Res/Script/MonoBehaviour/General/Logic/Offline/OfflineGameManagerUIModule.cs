@@ -34,6 +34,7 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
     private GameYearEnum[] availableGameYearList = new GameYearEnum[]{
         GameYearEnum.WW1,
         GameYearEnum.WW2Early,
+        GameYearEnum.WW2Middle,
         GameYearEnum.WW2Late
     };
 
@@ -52,6 +53,24 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
         else {
             offlineGamePropertyAssemble.Assemble.Add(
                 new OfflineGameProperty() {
+                    gameYearEnum = GameYearEnum.WW2Middle,
+                    presetName = "Default-WW2Middle-1V1",
+                    TeamANumber = 1,
+                    TeamBNumber = 1
+                }
+            );
+
+            offlineGamePropertyAssemble.Assemble.Add(
+                new OfflineGameProperty() {
+                    gameYearEnum = GameYearEnum.WW2Early,
+                    presetName = "Default-WW2Early-1V1",
+                    TeamANumber = 1,
+                    TeamBNumber = 1
+                }
+            );
+
+            offlineGamePropertyAssemble.Assemble.Add(
+                new OfflineGameProperty() {
                     gameYearEnum = GameYearEnum.WW2Late,
                     presetName = "Default-WW2Late-1V1",
                     TeamANumber = 1,
@@ -68,14 +87,7 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
                 }
             );
 
-            offlineGamePropertyAssemble.Assemble.Add(
-                new OfflineGameProperty() {
-                    gameYearEnum = GameYearEnum.WW2Early,
-                    presetName = "Default-WW2Early-1V1",
-                    TeamANumber = 1,
-                    TeamBNumber = 1
-                }
-            );
+
         }
 
 
