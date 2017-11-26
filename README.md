@@ -1,5 +1,5 @@
->## 请注意:这个仓库使用Git-lfs 请先Fork 然后在 Clone 不然我的lfs 流量会被用完的！！！
->## Note:This repository is using Git-lfs. Please fork the repository before cloning.Otherwise,my persional bandwidth will be used up!
+>#### 请注意:这个仓库使用Git-lfs 请先Fork 然后在 Clone 不然我的lfs 流量会被用完的！！！
+>#### Note:This repository is using Git-lfs. Please fork the repository before cloning.Otherwise,my persional bandwidth will be used up!
 >[About-storage-and-bandwidth-usage on GitHub](https://help.github.com/articles/about-storage-and-bandwidth-usage/)
 
 
@@ -18,7 +18,8 @@ An open source tank game made by Unity3D game engine.
  
 
 ## Installation 
-> Fork to your repository and clone from your repository！
+> 1.Install git large file storage [Download git-lfs](https://git-lfs.github.com)
+> 2.Fork to your repository and clone from your repository！
 
 **Then open the project with Unity3D (Unity 2017.x)
 **
@@ -32,8 +33,12 @@ An open source tank game made by Unity3D game engine.
 **Then you can run the game from scene "StartUp"
 **
 
-## WIKI Reference
->[WIKI](https://github.com/Doreamonsky/PanzerWar/wiki)
+## Reference
+### Wiki 
+WIKI Page on GitHub : [View it](https://github.com/Doreamonsky/PanzerWar/wiki)
+### Tutorials 
+1.Vehicle Configures in Unity3D
+Videos on [YouTube](https://www.youtube.com/watch?v=DK3lQzjhvtE) or  [Bilibili](https://www.bilibili.com/video/av16666019)
 
 ## Demo Codes
 ### Instantiate existing vehicle.
