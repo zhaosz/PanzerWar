@@ -11,27 +11,26 @@ An open source tank game made by Unity3D game engine.
 
 
 ------------
- [![license](http://img.shields.io/badge/license-MIT-blue.svg)]()
+[![license](http://img.shields.io/badge/license-MIT-blue.svg)]()
 ------------
 
  ![GameScreenShot](https://github.com/Doreamonsky/Markdown/blob/master/Screenshot.jpg?raw=true)
  
 
 ## Installation 
-> 1.Install git large file storage [Download git-lfs](https://git-lfs.github.com)
-> 2.Fork to your repository and clone from your repository！
+####  Clone
+> 1. Install git large file storage [Download git-lfs](https://git-lfs.github.com)
+> 2. Fork to your repository and clone from your repository！
 
-**Then open the project with Unity3D (Unity 2017.x)
-**
+*Then open the project with Unity3D (Unity 2017.x)*
+#### Build  AssetBundles
+>1. Open menu Tools/ShanghaiWindy/Build/SceneBuilder .
+>2. Switch platform to your building target.
+>3. Click Relaod Cooked Scene Data.
+>4. Click Label Assets .
+>5. Click Build Sub-Assets.
 
-1. Open menu Tools/ShanghaiWindy/Build/SceneBuilder .
-2. Switch platform to your building target.
-3. Click Relaod Cooked Scene Data.
-4. Click Label Assets .
-5. Click Build Sub-Assets.
-
-**Then you can run the game from scene "StartUp"
-**
+*Then you can run the game from scene "StartUp"*
 
 ## Reference
 ### Wiki 
