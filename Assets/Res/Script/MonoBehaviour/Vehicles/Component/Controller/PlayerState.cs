@@ -123,7 +123,7 @@ public class PlayerState : BasePlayerState {
 			MainCamera =this.transform.root.GetComponentInChildren<Camera>();
 			PTC.SetWheels (true,true,true);
 
-			StartCoroutine(InGameVoiceSoundManager.Self.Init (TankName,(InGameVoiceSoundManagerReturnValue)=>{
+            StartCoroutine(InGameVoiceSoundManager.Self.Init (playerStateParameter.nationType,(InGameVoiceSoundManagerReturnValue)=>{
                 InGameVoiceSoundManager.PlayVoice(InGameVoiceSoundManager.VoiceType.Start_Battle,InGameVoiceSoundManager.InGameVoiceLanguage(playerStateParameter.nationType));
 			}));
 

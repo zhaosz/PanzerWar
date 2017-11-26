@@ -1,6 +1,5 @@
 ﻿//#define ServerSide
 
-using PigeonCoopToolkit.Effects.Trails;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
@@ -17,14 +16,12 @@ public class MachineGun : MonoBehaviour
 	private float SmokeAfter = 0.6f;
 	private float SmokeMax = 2;
 	private float SmokeIncrement = 0.35f;
-	private SmokePlume MuzzlePlume;
 
-	private GameObject MuzzleFlashObject;
 	private float FireTime = 0;
 
 	private float _smoke;
-	private GameObject Forward;
 
+	private GameObject Forward;
 	private InstanceNetType netType;
     private TurretController turretController;
 	private TankFire tankFire;
@@ -49,11 +46,7 @@ public class MachineGun : MonoBehaviour
 
 
 		Bullet = (GameObject)Resources.Load ("Ammos/Ammo_13mm");
-		GameObject temp = (GameObject)Instantiate (Resources.Load ("SmokePlume"), MachineGunFFPoint.position, MachineGunFFPoint.rotation);
-		MuzzlePlume = temp.GetComponent<SmokePlume> ();
-		MuzzlePlume.transform.parent = MachineGunFFPoint;
-		MuzzleFlashObject = MuzzlePlume.transform.Find ("MuzzleFlashLights").gameObject;
-		MuzzleFlashObject.gameObject.SetActive (false);
+
 
 		Forward = new GameObject ("Forward");
 		Forward.transform.SetParent (MachineGunFFPoint.parent);
@@ -94,7 +87,6 @@ public class MachineGun : MonoBehaviour
 		}
 
 
-		MuzzlePlume.Emit = _smoke > SmokeAfter;
 		_smoke -= Time.deltaTime;
 		if (_smoke > SmokeMax)
 			_smoke = SmokeMax;
@@ -196,8 +188,6 @@ public class MachineGun : MonoBehaviour
 				NowTime = 0;
 				AmmoInfo.bulletState = BulletState.Master;
 			} else {
-				MuzzleFlashObject.SetActive (true);
-				Invoke ("LightsOff", 0.05f);
 				_smoke += SmokeIncrement;
 				FireTime += 0.05f;
                 if (GameDataManager.OfflineMode) {
@@ -210,9 +200,6 @@ public class MachineGun : MonoBehaviour
 		}
 	}
 
-	private void LightsOff ()
-	{
-		MuzzleFlashObject.SetActive (false);
-	}
+
 
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleTextData: {fileID: 11400000, guid: e12d05d8b5eec40979a20cff03637332, type: 2}
   modelData:
-    MainModel: {fileID: 1178270371809484, guid: b4401b16b18b440e0ab71ab37660f3e9,
+    MainModel: {fileID: 1850659563109960, guid: b4401b16b18b440e0ab71ab37660f3e9,
       type: 2}
     LOD: {fileID: 0}
     HitBox: {fileID: 11400000, guid: dca48225d9d864565be1658504247c9f, type: 2}

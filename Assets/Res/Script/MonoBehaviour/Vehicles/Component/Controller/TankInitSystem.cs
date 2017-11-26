@@ -324,7 +324,7 @@ public class TankInitSystem : BaseInitSystem
         PTC.maxAngularVelocity = PTCParameter.MaxAngularVelocity;
 		PTC.MaxSpeed = PTCParameter.MaxSpeed;
         PTC.MinSpeed = PTCParameter.MinSpeed;
-		PTC.COM = PTCParameter.CenterOfGravity;
+		PTC.gravityCenter = PTCParameter.CenterOfGravity;
 		PTC.PushSpeed = PTCParameter.PushSpeed;
 		PTC.BackSpeed = PTCParameter.BackSpeed;
 

@@ -11,8 +11,8 @@ public class TankTracksController : MonoBehaviour {
 
 
 
-    public bool autoCOM = true;
-    public Transform COM;
+    public bool autoGravityCenter = true;
+    public Transform gravityCenter;
 
 
 
@@ -40,20 +40,7 @@ public class TankTracksController : MonoBehaviour {
 
     [System.Serializable]
     public class VAconfig {
-        //Dynamics that affect the acceleration and max speed
-        //        Motor Torque
-        //        |
-        //        |
-        //        |
-        //        |_________________speed km/ph
         public AnimationCurve acceleration = AnimationCurve.Linear(0.0f, 750.0f, 80.0f, 0.0f);
-
-        //Dynamics that affect the brake force when vertical axis is not active
-        //        Brake Torque
-        //        |
-        //        |
-        //        |
-        //        |_________________speed km/ph
         public AnimationCurve brake = AnimationCurve.Linear(0.0f, 1000.0f, 80.0f, 1100.0f);
 
     }
@@ -65,29 +52,10 @@ public class TankTracksController : MonoBehaviour {
 
     [System.Serializable]
     public class HAconfig {
-        //Dynamics that affect the rotate speed
-        //        Rotate Vector Y coord
-        //        |
-        //        |
-        //        |
-        //        |_________________speed km/ph
         public AnimationCurve rotateSpeed = AnimationCurve.Linear(0.0f, 6.5f, 80.0f, 0f);
-        //4.5
-        //Dynamics that affect the brake when rotate
-        //        Brake Torque
-        //        |
-        //        |
-        //        |
-        //        |_________________speed km/ph
         public AnimationCurve brake = AnimationCurve.Linear(0.0f, 0.0f, 80.0f, 1000.0f);
     }
 
-    //Dynamics that affect the rotate damper
-    //        Rotate Vector Z coord
-    //        |
-    //        |
-    //        |
-    //        |_________________speed km/ph
     public AnimationCurve rotationDamper = AnimationCurve.Linear(0.0f, 0.0f, 80.0f, 20.0f);
 
     public AnimationCurve rotationByRotateDamper = AnimationCurve.Linear(0, 0, 0, 0);
@@ -119,10 +87,6 @@ public class TankTracksController : MonoBehaviour {
 
         public Axis wheelsRotationAxis = Axis.X;
         public bool inverseWheelsRotation = false;
-
-
-
-
 
         private int WheelRotationAxisPointer = 0;
 
@@ -203,8 +167,6 @@ public class TankTracksController : MonoBehaviour {
 
     public class WheelData {
         public Transform wheelTransform;
-        public Vector3 wheelStartPos;
-        //public float rotation = 0.0f;
         public Vector3 wheelRotationAngles;
     }
 
@@ -340,8 +302,8 @@ public class TankTracksController : MonoBehaviour {
 
 
     public virtual void Start() {
-        if (!autoCOM)
-            GetComponent<Rigidbody>().centerOfMass = COM.localPosition;
+        if (!autoGravityCenter)
+            GetComponent<Rigidbody>().centerOfMass = gravityCenter.localPosition;
 
         rotationByRotateDamper = AnimationCurve.Linear(0, maxAngularVelocity * 0.2f, MaxSpeed, maxAngularVelocity * 0.15f);
         rotationByRotateDamper.preWrapMode = WrapMode.Clamp;
@@ -389,20 +351,15 @@ public class TankTracksController : MonoBehaviour {
 
         result.wheelTransform = wheel;
         result.col = col;
-        result.wheelStartPos = wheel.transform.localPosition;
         result.wheelRotationAngles = wheel.localEulerAngles;
         return result;
     }
 
     private WheelData SetupUpperWheels(Transform wheel) {
         WheelData result = new WheelData();
-
         result.wheelTransform = wheel;
-        result.wheelStartPos = wheel.transform.localPosition;
         result.wheelRotationAngles = wheel.localEulerAngles;
-
         return result;
-
     }
 
     private Vector3 rotationVector = Vector3.zero;
@@ -445,7 +402,6 @@ public class TankTracksController : MonoBehaviour {
 
     }
 
-    #region Rpm转化为KMPH
 
     public float RPMtoKMPH(float radius, float rpm) {
         float length = 2.0f * Mathf.PI * radius;
@@ -455,7 +411,6 @@ public class TankTracksController : MonoBehaviour {
         return result;
     }
 
-    #endregion
 
 
 
@@ -562,7 +517,6 @@ public class TankTracksController : MonoBehaviour {
 
             if (steer != 0.0f)
                 if (!col.isGrounded) {
-
                     rfrd.rotationForce = 0.0f;
                     rfrd.rotationDamper = 0.0f;
                 }

@@ -19,8 +19,8 @@ MonoBehaviour:
     HitBox: {fileID: 11400000, guid: 7c8314618cb0f4b928058b6120a2858c, type: 2}
   cacheData:
     FFPoint:
-      localPosition: {x: 0, y: 0, z: 0}
-      localEulerAngle: {x: 0, y: 0, z: 0}
+      localPosition: {x: 0, y: 0, z: 0.585}
+      localEulerAngle: {x: -0, y: 0, z: 0}
     EffectStart:
       localPosition: {x: 0, y: 0, z: 2.033}
       localEulerAngle: {x: -0, y: 0, z: 0}

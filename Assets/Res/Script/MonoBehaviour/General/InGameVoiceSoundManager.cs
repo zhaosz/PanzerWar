@@ -47,8 +47,8 @@ public class InGameVoiceSoundManager : MonoBehaviour {
 		}
 		return mylanguage;
 	}
-	public IEnumerator Init(string VehicleName,System.Action<bool> onFinish){
-        language = Language.EN; //TODO :
+    public IEnumerator Init(TankFire.NationType vehicleNation,System.Action<bool> onFinish){
+        language = InGameVoiceLanguage(vehicleNation); //TODO :
 		if (InitedLanguage.Contains (language.ToString ())) {
 			onFinish (true);
 			yield break;

@@ -57,6 +57,9 @@ ModelImporter:
     100098: Wheel03.001
     100100: Wheel04.001
     100102: HitBox_01
+    100104: BezierCircle
+    100106: BezierCircle.001
+    100108: BezierCircle.002
     400000: 062D2DFF00
     400002: 092D2AFF00
     400004: 0C2D27FF00
@@ -109,6 +112,9 @@ ModelImporter:
     400098: Wheel03.001
     400100: Wheel04.001
     400102: HitBox_01
+    400104: BezierCircle
+    400106: BezierCircle.001
+    400108: BezierCircle.002
     2300000: 062D2DFF00
     2300002: 092D2AFF00
     2300004: 0C2D27FF00
@@ -156,6 +162,9 @@ ModelImporter:
     2300088: Wheel03.001
     2300090: Wheel04.001
     2300092: HitBox_01
+    2300094: BezierCircle
+    2300096: BezierCircle.001
+    2300098: BezierCircle.002
     3300000: 062D2DFF00
     3300002: 092D2AFF00
     3300004: 0C2D27FF00
@@ -203,6 +212,9 @@ ModelImporter:
     3300088: Wheel03.001
     3300090: Wheel04.001
     3300092: HitBox_01
+    3300094: BezierCircle
+    3300096: BezierCircle.001
+    3300098: BezierCircle.002
     4300000: MainBody
     4300002: Oil001
     4300004: Oil
@@ -244,6 +256,9 @@ ModelImporter:
     4300076: Wheel01.003
     4300078: Wheel02.001
     4300080: HitBox_01
+    4300082: BezierCircle.002
+    4300084: BezierCircle.001
+    4300086: BezierCircle
   materials:
     importMaterials: 1
     materialName: 0

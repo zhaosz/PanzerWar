@@ -27,13 +27,12 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
 
     private GameMapEnum[] availableGameMapList = new GameMapEnum[]{
         GameMapEnum.Desert,
-        GameMapEnum.Rock,
-        GameMapEnum.Village
     };
 
     private int currentGameMap = 0;
 
     private GameYearEnum[] availableGameYearList = new GameYearEnum[]{
+        GameYearEnum.WW1,
         GameYearEnum.WW2Early,
         GameYearEnum.WW2Late
     };
