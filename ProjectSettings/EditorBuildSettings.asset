@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Res/ArtPackage/Sence/StartUp/StartUp.unity
     guid: 94d7001086e0d3e42a72bfc605d34d1a
   - enabled: 1
-    path: Assets/Res/ArtPackage/Sence/Login/Login.unity
-    guid: 1bbfea14fb2cb5248a3a3a7038c49309
-  - enabled: 1
     path: Assets/Res/ArtPackage/Sence/PoolScene/PoolScene.unity
     guid: d58a128113499de40842cbfa6c9ff0cc
   - enabled: 1
