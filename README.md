@@ -2,16 +2,14 @@
 >#### Note:This repository is using Git-lfs. Please fork the repository before cloning.Otherwise,my persional bandwidth will be used up!
 >[About-storage-and-bandwidth-usage on GitHub](https://help.github.com/articles/about-storage-and-bandwidth-usage/)
 
+[![license](http://img.shields.io/badge/license-MIT-blue.svg)]()
+[![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)]()
 
 # Synopsis 
 An open source tank game made by Unity3D game engine.
 
 > Panzer War used to be a commercial  mobile tank combat game. However,the developer won't have much time to work on it.So the online servers are stopped,and the game become an open source one.
 
-
-
-------------
-[![license](http://img.shields.io/badge/license-MIT-blue.svg)]()
 ------------
 
  ![GameScreenShot](https://github.com/Doreamonsky/Markdown/blob/master/Screenshot.jpg?raw=true)
