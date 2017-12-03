@@ -62,8 +62,8 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
 
             offlineGamePropertyAssemble.Assemble.Add(
                 new OfflineGameProperty() {
-                    gameYearEnum = GameYearEnum.WW2Early,
-                    presetName = "Default-WW2Early-1V1",
+                    gameYearEnum = GameYearEnum.WW1,
+                    presetName = "Default-WW1-1V1",
                     TeamANumber = 1,
                     TeamBNumber = 1
                 }
