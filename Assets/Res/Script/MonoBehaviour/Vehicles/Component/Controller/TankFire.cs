@@ -333,7 +333,7 @@ public class TankFire : BaseFireSystem {
             BulletCountList[SelectAmmo] -= 1;
             CheckAmmoCount();
             ammo.GetComponent<BulletScript>().bulletState = BulletState.Master;
-            MainBody.GetComponent<Rigidbody>().AddForceAtPosition(tankFireParameter.recoilTransform.forward * -1000* tankFireParameter.FireRecoil, tankFireParameter.recoilTransform.position);
+           // MainBody.GetComponent<Rigidbody>().AddForceAtPosition(tankFireParameter.recoilTransform.forward * -1000* tankFireParameter.FireRecoil, tankFireParameter.recoilTransform.position);
 
             ReSetAmmoSprits();
             ammo.GetComponent<BulletScript>().bulletState = BulletState.Client;
@@ -410,7 +410,7 @@ public class TankFire : BaseFireSystem {
 
 
                     ammo.GetComponent<BulletScript>().bulletState = BulletState.Master;
-                    MainBody.GetComponent<Rigidbody>().AddForceAtPosition(tankFireParameter.recoilTransform.forward *-1000 * tankFireParameter.FireRecoil, tankFireParameter.recoilTransform.position);
+                    //MainBody.GetComponent<Rigidbody>().AddForceAtPosition(tankFireParameter.recoilTransform.forward *-1000 * tankFireParameter.FireRecoil, tankFireParameter.recoilTransform.position);
                     PoolManager.CreateObject(tankFireParameter.muzzleFire.ToString(), FireEffectPoint.transform.position, FireEffectPoint.transform.eulerAngles);
                     StartCoroutine(FireSmokeGenerater());
 

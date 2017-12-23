@@ -18,11 +18,11 @@ public class GameYear {
         };
 
         List<string> WW2MiddleVehicleList = new List<string>(){
-            "KV2"
+            "KV2","KV"
         };
 
         List<string> WW2LateVehicleList = new List<string>() {
-            "T-54","T-44","T-62A","Bat_Chatillon155_58"
+            "T-54","T-44","T-62A","Bat_Chatillon155_58","T-34-3","IS-3"
         };
 
         switch(currentYearEnum){

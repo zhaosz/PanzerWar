@@ -19,10 +19,10 @@ MonoBehaviour:
     HitBox: {fileID: 11400000, guid: 7a7e6463c1f2f421c9f41906d73ab6d5, type: 2}
   cacheData:
     FFPoint:
-      localPosition: {x: 0, y: 0, z: 0.287}
+      localPosition: {x: 0, y: 0.111, z: 1.082}
       localEulerAngle: {x: -0, y: 0, z: 0}
     EffectStart:
-      localPosition: {x: -0.009999886, y: 0.11, z: 4.75}
+      localPosition: {x: -0.009999886, y: 0.11, z: 4.81}
       localEulerAngle: {x: -0, y: 0, z: 0}
     EngineSmoke:
       localPosition: {x: -1.778, y: 1.2913, z: -1.563}
@@ -43,6 +43,6 @@ MonoBehaviour:
       localPosition: {x: 0, y: 1.01, z: 0}
       localEulerAngle: {x: -0, y: 0, z: 0}
     MachineGunFFPoint:
-      localPosition: {x: 0.369, y: -0.4362, z: 1.4183}
+      localPosition: {x: 0.369, y: -0.4362, z: 1.647}
       localEulerAngle: {x: -0, y: 0, z: 0}
     StartPoint: {x: 0, y: 0, z: 0}

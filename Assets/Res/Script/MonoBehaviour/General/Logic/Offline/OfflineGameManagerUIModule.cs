@@ -156,6 +156,7 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
         }
         //Garage
         OpenGarage_Button.onClick.AddListener(() => {
+            
             //ClientNetwork.Instance.StartCoroutine(
             //    AssetBundleManager.RequestScene(true, true, "garage", (myReturnValue) => {
             //        Hashtable vehicleList = new Hashtable();

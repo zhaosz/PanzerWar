@@ -32,6 +32,8 @@ ModelImporter:
     100048: Turret
     100050: 0C2D0CFF00.001
     100052: 0F2D0FFF00.001
+    100054: LeftTrack
+    100056: RightTrack
     400000: 062D06FF00
     400002: 092D09FF00
     400004: 0C2D0CFF00
@@ -59,6 +61,8 @@ ModelImporter:
     400048: Turret
     400050: 0C2D0CFF00.001
     400052: 0F2D0FFF00.001
+    400054: LeftTrack
+    400056: RightTrack
     2300000: 062D06FF00
     2300002: 092D09FF00
     2300004: 0C2D0CFF00
@@ -79,6 +83,8 @@ ModelImporter:
     2300034: Turret
     2300036: 0C2D0CFF00.001
     2300038: 0F2D0FFF00.001
+    2300040: LeftTrack
+    2300042: RightTrack
     3300000: 062D06FF00
     3300002: 092D09FF00
     3300004: 0C2D0CFF00
@@ -99,6 +105,8 @@ ModelImporter:
     3300034: Turret
     3300036: 0C2D0CFF00.001
     3300038: 0F2D0FFF00.001
+    3300040: LeftTrack
+    3300042: RightTrack
     4300000: 092D09FF00
     4300002: 062D06FF00
     4300004: 1E2D1EFF00
@@ -119,6 +127,8 @@ ModelImporter:
     4300034: 272D27FF00
     4300036: 242D24FF00
     4300038: 212D21FF00
+    4300040: LeftTrack
+    4300042: RightTrack
     7400000: RightUpperWheel|002|Take 001|BaseLayer
     7400002: RightUpperWheel|002|Take 001|BaseLayer.001
     7400004: RightUpperWheel|Fanbu|Take 001|BaseLayer
