@@ -1,7 +1,3 @@
->#### 请注意:这个仓库使用Git-lfs 请先Fork 然后在 Clone 不然我的lfs 流量会被用完的！！！
->#### Note:This repository is using Git-lfs. Please fork the repository before cloning.Otherwise,my persional bandwidth will be used up!
->[About-storage-and-bandwidth-usage on GitHub](https://help.github.com/articles/about-storage-and-bandwidth-usage/)
-
 [![license](http://img.shields.io/badge/license-MIT-blue.svg)]()
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)]()
 
@@ -18,7 +14,7 @@ An open source tank game made by Unity3D game engine.
 ## Installation 
 ####  Clone
 > 1. Install git large file storage [Download git-lfs](https://git-lfs.github.com)
-> 2. Fork to your repository and clone from your repository！
+> 2. Use git command: git clone https://github.com/Doreamonsky/PanzerWar.git 
 
 *Then open the project with Unity3D (Unity 2017.x)*
 #### Build  AssetBundles
