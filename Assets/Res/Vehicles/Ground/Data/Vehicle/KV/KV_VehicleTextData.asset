@@ -103,7 +103,7 @@ MonoBehaviour:
     vehicleEngineSoundData: {fileID: 11400000, guid: 9402a6306a39f47ca82f422b4461fa17,
       type: 2}
   TFParameter:
-    ReloadTime: 5
+    ReloadTime: 1.8
     FireRecoil: 250
     AmmoCount: 76
     HasMachineGun: 1

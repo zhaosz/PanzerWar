@@ -237,6 +237,7 @@ public class TankInitSystem : BaseInitSystem
             mt.maxTurretAngle = MTParameter.maxTurretAngle;
             mt.gunDegreesPerSecond = MTParameter.gunDegreesPerSecond;
             mt.turretDegreesPerSecond = MTParameter.turretDegreesPerSecond;
+            mt.offset = MTParameter.offset;
             mt.isMobile = isMobile;
             #endregion
             #region 主摄像机设置

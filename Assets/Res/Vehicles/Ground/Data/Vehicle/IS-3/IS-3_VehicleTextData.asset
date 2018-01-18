@@ -124,10 +124,11 @@ MonoBehaviour:
   multiTurrets: []
   MTParameter:
     maxTurretAngle: 180
-    UpMaxDegree: 15
-    DownMaxDegree: 20
+    UpMaxDegree: 25
+    DownMaxDegree: 8
     turretDegreesPerSecond: 26
     gunDegreesPerSecond: 26.25
+    offset: 0
   PSParameter:
     Health: 1500
     engineType: 2

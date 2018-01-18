@@ -27,6 +27,7 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
 
     private GameMapEnum[] availableGameMapList = new GameMapEnum[]{
         GameMapEnum.Desert,
+        GameMapEnum.Ensk
     };
 
     private int currentGameMap = 0;
@@ -35,7 +36,8 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
         GameYearEnum.WW1,
         GameYearEnum.WW2Early,
         GameYearEnum.WW2Middle,
-        GameYearEnum.WW2Late
+        GameYearEnum.WW2Late,
+        GameYearEnum.ColdWar
     };
 
     private int currentGameYear = 0;
@@ -154,25 +156,7 @@ public class OfflineGameManagerUIModule : MonoBehaviour {
         foreach (OfflineGameProperty gameProperty in offlineGamePropertyAssemble.Assemble) {
             CreateTemplateInstance(gameProperty);
         }
-        //Garage
-        OpenGarage_Button.onClick.AddListener(() => {
-            
-            //ClientNetwork.Instance.StartCoroutine(
-            //    AssetBundleManager.RequestScene(true, true, "garage", (myReturnValue) => {
-            //        Hashtable vehicleList = new Hashtable();
 
-            //        AccountDataManager.InstanceAllHastables();
-
-            //        foreach (string Vehicle in AccountDataManager.ExcelVehicleData.Keys) {
-            //            vehicleList.Add(Vehicle, new Crew.CrewInfo());
-            //        }
-
-            //        GarageTankManger.Instance.UpdataTankList(vehicleList, true);
-
-            //        AccountManager.Instance.DataUpdata();
-            //    }, null)
-            //);
-        });
 
         OpenRaceMode_Button.onClick.AddListener(()=>{
             OfflineGameManager._Instance.onRaceGamerequested();

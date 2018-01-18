@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Res/ArtPackage/Sence/ClientOffline.unity
     guid: 081541fa3a5e99f43b56438d0f897a5c
+  - enabled: 1
+    path: Assets/Res/Cooked/Scene/Ensk_Cooked.unity
+    guid: 55aac46a861ba4fd39d15ec9b01b9e22
