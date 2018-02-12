@@ -3,12 +3,16 @@
 
 # Synopsis 
 An open source tank game made by Unity3D game engine.
+
 这是一个由Unity3D 开发的开源坦克游戏。
 
-点击查看中文版项目配置: [点击查看 中文版ReadMe(https://github.com/Doreamonsky/PanzerWar/wiki/配置项目)
+点击查看中文版项目配置: [点击查看 中文版ReadMe(https://github.com/Doreamonsky/PanzerWar/wiki/配置项目)]
 
 
 > Panzer War used to be a commercial  mobile tank combat game. However,the developer won't have much time to work on it.So the online servers are stopped,and the game become an open source one.
+
+You can download released version from 
+[ GooglePlay(https://play.google.com/store/apps/details?id=com.shanghaiwindy.PanzerWarOpenSource)]
 
 ------------
 
