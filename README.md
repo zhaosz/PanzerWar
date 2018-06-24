@@ -1,14 +1,18 @@
 [![license](http://img.shields.io/badge/license-MIT-blue.svg)]()
-[![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)]()
 
 
 # Synopsis 
 An open source tank game made by Unity3D game engine.
 
-查看中文版ReadMe: [点击查看](https://github.com/Doreamonsky/PanzerWar/wiki/配置项目)
+这是一个由Unity3D 开发的开源坦克游戏。
+
+点击查看中文版项目配置: [点击查看 中文版ReadMe](https://github.com/Doreamonsky/PanzerWar/wiki/配置项目)
 
 
 > Panzer War used to be a commercial  mobile tank combat game. However,the developer won't have much time to work on it.So the online servers are stopped,and the game become an open source one.
+
+You can download released version from 
+[GooglePlay](https://play.google.com/store/apps/details?id=com.shanghaiwindy.PanzerWarOpenSource)
 
 ------------
 
@@ -32,10 +36,12 @@ An open source tank game made by Unity3D game engine.
 ### Wiki 
 WIKI Page on GitHub : [View it](https://github.com/Doreamonsky/PanzerWar/wiki)
 ### Tutorials 
-1.Vehicle Configures in Unity3D
-Videos on [YouTube](https://www.youtube.com/watch?v=DK3lQzjhvtE) or  [Bilibili](https://www.bilibili.com/video/av16666019)
-2.videos for beginner.
+1.videos for beginner.
 Videos on [YouTube](https://youtu.be/mbZA3l5upyI) 
+
+2.Vehicle Configures in Unity3D
+Videos on [YouTube](https://www.youtube.com/watch?v=DK3lQzjhvtE) 
+
 
 ## Demo Codes
 ### Instantiate existing vehicle.
