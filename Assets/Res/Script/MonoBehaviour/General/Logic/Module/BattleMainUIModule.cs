@@ -17,165 +17,177 @@ public class BattleMainUIModule : MonoBehaviour {
 
     private string currentSelectedVehicle;
 
-    public static void Init() {
+    public IGameModule registeredGameModule;
+
+    public static void Init (IGameModule currentGameModule) {
         if (_Instance == null) {
-            _Instance = new GameObject("BattleMainUIModule", typeof(BattleMainUIModule)).GetComponent<BattleMainUIModule>();
-            _Instance.InstanceInit();
+            _Instance = new GameObject ("BattleMainUIModule", typeof (BattleMainUIModule)).GetComponent<BattleMainUIModule> ();
+            _Instance.InstanceInit ();
+            _Instance.registeredGameModule = currentGameModule;
         }
+
     }
 
-    private void InstanceInit() {
-        mainUIObject = Instantiate<GameObject>(Resources.Load<GameObject>("UI/BattleUIModule/Main"));
+    private void InstanceInit () {
+        mainUIObject = Instantiate<GameObject> (Resources.Load<GameObject> ("UI/BattleUIModule/Main"));
 
-        uiReference = mainUIObject.GetComponent<BattleMainUIReferenceModule>();
+        uiReference = mainUIObject.GetComponent<BattleMainUIReferenceModule> ();
 
         onToggleSelectVehicleUIObject = (isActive) => {
-            uiReference.SelectVehiclePanel.SetActive(isActive);
+            uiReference.SelectVehiclePanel.SetActive (isActive);
         };
 
         //炮弹增加逻辑
         for (int i = 0; i < uiReference.AmmunitionAdders.Length; i++) {
             int current = i;
 
-            if(PlayerPrefs.HasKey(string.Format("{0}{1}", currentSelectedVehicle, current))){
-                uiReference.AmmunitionChangeFielders[current].text = PlayerPrefs.GetInt(string.Format("{0}{1}", currentSelectedVehicle, current)).ToString();
-            }
-            else{
+            if (PlayerPrefs.HasKey (string.Format ("{0}{1}", currentSelectedVehicle, current))) {
+                uiReference.AmmunitionChangeFielders[current].text = PlayerPrefs.GetInt (string.Format ("{0}{1}", currentSelectedVehicle, current)).ToString ();
+            } else {
                 uiReference.AmmunitionChangeFielders[current].text = "10";
             }
 
-            uiReference.AmmunitionAdders[current].onClick.AddListener(() => {
-                int ammoCount = int.Parse(uiReference.AmmunitionChangeFielders[current].text);
+            uiReference.AmmunitionAdders[current].onClick.AddListener (() => {
+                int ammoCount = int.Parse (uiReference.AmmunitionChangeFielders[current].text);
                 ammoCount += 1;
-                uiReference.AmmunitionChangeFielders[current].text = ammoCount.ToString();
+                uiReference.AmmunitionChangeFielders[current].text = ammoCount.ToString ();
             });
 
-            uiReference.AmmunitionMinusers[current].onClick.AddListener(() => {
-                int ammoCount = int.Parse(uiReference.AmmunitionChangeFielders[current].text);
+            uiReference.AmmunitionMinusers[current].onClick.AddListener (() => {
+                int ammoCount = int.Parse (uiReference.AmmunitionChangeFielders[current].text);
                 ammoCount -= 1;
-                uiReference.AmmunitionChangeFielders[current].text = ammoCount.ToString();
+                uiReference.AmmunitionChangeFielders[current].text = ammoCount.ToString ();
             });
 
-            uiReference.AmmunitionChangeFielders[current].onValueChanged.AddListener(
+            uiReference.AmmunitionChangeFielders[current].onValueChanged.AddListener (
                 (changedValue) => {
-                    PlayerPrefs.SetInt(string.Format("{0}{1}", currentSelectedVehicle, current), int.Parse(changedValue));
+                    PlayerPrefs.SetInt (string.Format ("{0}{1}", currentSelectedVehicle, current), int.Parse (changedValue));
                 }
             );
         }
-        //列表更新逻辑
+        //列表更新逻辑 Update Vehicle List 
         onUpdateVehicleList = (vehicleList) => {
             for (int i = 0; i < vehicleList.Count; i++) {
                 int current = i;
 
-                //选择默认车辆
+                //选择默认车辆 Select Default Vechile
                 if (current == 0) {
-                    OnSelectNewVehicle(vehicleList[0]);
+                    OnSelectNewVehicle (vehicleList[0]);
                 }
 
-                uiReference.vehicleSelectDropDown.AddData(
-                    new MaterialUI.OptionData() {
-                        text = uGUI_Localsize.GetContent(vehicleList[i]),
-                        onOptionSelected = () => {
-                            OnSelectNewVehicle(vehicleList[current]);
-                        }
+                uiReference.vehicleSelectDropDown.AddData (
+                    new MaterialUI.OptionData () {
+                        text = uGUI_Localsize.GetContent (vehicleList[i]),
+                            onOptionSelected = () => {
+                                OnSelectNewVehicle (vehicleList[current]);
+                            }
                     }
                 );
             }
 
         };
 
-        uiReference.JoinBattleButton.onClick.AddListener(() => {
+        uiReference.JoinBattleButton.onClick.AddListener (() => {
 
-            onVehicleSelected(
+            onVehicleSelected (
                 currentSelectedVehicle,
-                new int[]{
-                    int.Parse(uiReference.AmmunitionChangeFielders[0].text),
-                    int.Parse(uiReference.AmmunitionChangeFielders[1].text),
-                    int.Parse(uiReference.AmmunitionChangeFielders[2].text)
+                new int[] {
+                    int.Parse (uiReference.AmmunitionChangeFielders[0].text),
+                        int.Parse (uiReference.AmmunitionChangeFielders[1].text),
+                        int.Parse (uiReference.AmmunitionChangeFielders[2].text)
                 }
             );
 
         });
+        //Exit Battle
+        uiReference.ExitGame.onClick.AddListener (() => {
+            registeredGameModule.OnFinish ();
+        });
+
+        uiReference.GameSetting.onClick.AddListener (
+            () => {
+                uGUI_InGameSetting.OpenSetting ();
+            }
+        );
     }
 
-    private void OnSelectNewVehicle(string _vehicle) {
+    private void OnSelectNewVehicle (string _vehicle) {
         currentSelectedVehicle = _vehicle;
 
-        StartCoroutine(LoadImage(_vehicle));
+        StartCoroutine (LoadImage (_vehicle));
 
-        UpdateAmmunitionList(_vehicle);
+        UpdateAmmunitionList (_vehicle);
 
-        AssetRequestTask vehicleDataRequestTask = new AssetRequestTask() {
+        AssetRequestTask vehicleDataRequestTask = new AssetRequestTask () {
             onAssetLoaded = (Object data) => {
-                VehicleTextData vehicleTextData = (VehicleTextData)data;
-                BulletScript bulletData = vehicleTextData.TFParameter.bulletType.GetComponent<BulletScript>();
+                VehicleTextData vehicleTextData = (VehicleTextData) data;
+                BulletScript bulletData = vehicleTextData.TFParameter.bulletType.GetComponent<BulletScript> ();
 
                 string formater = "{0}:{1} {2}:{3}(m/s) {4}:{5}(hp) {6}:{7}(mm)";
 
-
-                uiReference.APText.text = string.Format(
+                uiReference.APText.text = string.Format (
                     formater,
-                    uGUI_Localsize.GetContent("AmmoType"), "AP",
-                    uGUI_Localsize.GetContent("AmmoSpeed"), bulletData.Speed,
-                    uGUI_Localsize.GetContent("AmmoDamage"), bulletData.APDamage,
-                    uGUI_Localsize.GetContent("AmmoPenerate"), bulletData.APPenetration
+                    uGUI_Localsize.GetContent ("AmmoType"), "AP",
+                    uGUI_Localsize.GetContent ("AmmoSpeed"), bulletData.Speed,
+                    uGUI_Localsize.GetContent ("AmmoDamage"), bulletData.APDamage,
+                    uGUI_Localsize.GetContent ("AmmoPenerate"), bulletData.APPenetration
                 );
 
-                uiReference.HEText.text = string.Format(
+                uiReference.HEText.text = string.Format (
                     formater,
-                    uGUI_Localsize.GetContent("AmmoType"), "HE",
-                    uGUI_Localsize.GetContent("AmmoSpeed"), bulletData.Speed * 0.75f,
-                    uGUI_Localsize.GetContent("AmmoDamage"), bulletData.HeDamage,
-                    uGUI_Localsize.GetContent("AmmoPenerate"), bulletData.HePenetration
+                    uGUI_Localsize.GetContent ("AmmoType"), "HE",
+                    uGUI_Localsize.GetContent ("AmmoSpeed"), bulletData.Speed * 0.75f,
+                    uGUI_Localsize.GetContent ("AmmoDamage"), bulletData.HeDamage,
+                    uGUI_Localsize.GetContent ("AmmoPenerate"), bulletData.HePenetration
                 );
 
-                uiReference.APCRText.text = string.Format(
+                uiReference.APCRText.text = string.Format (
                     formater,
-                    uGUI_Localsize.GetContent("AmmoType"), "APCR",
-                    uGUI_Localsize.GetContent("AmmoSpeed"), bulletData.Speed * 1.25f,
-                    uGUI_Localsize.GetContent("AmmoDamage"), bulletData.APDamage * 0.75f,
-                   uGUI_Localsize.GetContent("AmmoPenerate"), bulletData.ApcrPenration
+                    uGUI_Localsize.GetContent ("AmmoType"), "APCR",
+                    uGUI_Localsize.GetContent ("AmmoSpeed"), bulletData.Speed * 1.25f,
+                    uGUI_Localsize.GetContent ("AmmoDamage"), bulletData.APDamage * 0.75f,
+                    uGUI_Localsize.GetContent ("AmmoPenerate"), bulletData.ApcrPenration
                 );
 
             }
         };
 
-        vehicleDataRequestTask.SetAssetBundleName(_vehicle, "data");
+        vehicleDataRequestTask.SetAssetBundleName (_vehicle, "data");
 
-        AssetBundleManager.LoadAssetFromAssetBundle(vehicleDataRequestTask);
+        AssetBundleManager.LoadAssetFromAssetBundle (vehicleDataRequestTask);
 
     }
 
-    private void UpdateAmmunitionList(string _vehicle) {
+    private void UpdateAmmunitionList (string _vehicle) {
         for (int i = 0; i < uiReference.AmmunitionAdders.Length; i++) {
             int current = i;
 
             uiReference.AmmunitionChangeFielders[current].enabled = false;
-            uiReference.AmmunitionChangeFielders[current].text = PlayerPrefs.GetInt(string.Format("{0}{1}", _vehicle, current)).ToString();
+            uiReference.AmmunitionChangeFielders[current].text = PlayerPrefs.GetInt (string.Format ("{0}{1}", _vehicle, current)).ToString ();
             uiReference.AmmunitionChangeFielders[current].enabled = true;
         }
     }
 
-    public IEnumerator ShowDeadCountDown(float time,System.Action onFinish){
-        uiReference.RespanPanel.SetActive(true);
+    public IEnumerator ShowDeadCountDown (float time, System.Action onFinish) {
+        uiReference.RespanPanel.SetActive (true);
 
-        while(time>0){
+        while (time > 0) {
             time -= 1;
-            uiReference.RespawnText.text = string.Format(uGUI_Localsize.GetContent("RespawnCountDown"), time);
-            yield return new WaitForSeconds(1);
+            uiReference.RespawnText.text = string.Format (uGUI_Localsize.GetContent ("RespawnCountDown"), time);
+            yield return new WaitForSeconds (1);
         }
 
-        uiReference.RespanPanel.SetActive(false);
+        uiReference.RespanPanel.SetActive (false);
 
-        onFinish();
+        onFinish ();
 
         yield break;
     }
     //异步加载载具描述图片
-    private IEnumerator LoadImage(string _vehicle) {
-        ResourceRequest resourceRequest = Resources.LoadAsync<Sprite>("UI/VehicleImage/" + _vehicle);
+    private IEnumerator LoadImage (string _vehicle) {
+        ResourceRequest resourceRequest = Resources.LoadAsync<Sprite> ("UI/VehicleImage/" + _vehicle);
         yield return resourceRequest;
-        uiReference.VehicleThumbnail.sprite = (Sprite)resourceRequest.asset;
+        uiReference.VehicleThumbnail.sprite = (Sprite) resourceRequest.asset;
     }
 
 }

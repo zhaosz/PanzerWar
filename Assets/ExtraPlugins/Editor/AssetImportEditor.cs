@@ -28,6 +28,8 @@ public class AssetImportEditor : AssetPostprocessor {
 		string[] assetStr = sourceTexture.assetPath.Split (new char[]{ '/', '.' }) ;
 
 		string assetName = assetStr [assetStr.Length - 2];
+        
+        return;
 
 		Debug.Log (assetName);
 

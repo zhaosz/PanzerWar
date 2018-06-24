@@ -7,7 +7,7 @@ public class GameEventManager : MonoBehaviour {
     public static System.Action<BaseInitSystem> onNewVehicleDestroyed;
     public static System.Action onPlayerVehicleDestroyed;
 
-    public static void ResetActions(){
+    public static void ResetActions () {
         onNewVehicleSpawned = null;
         onNewVehicleDestroyed = null;
         onPlayerVehicleDestroyed = null;

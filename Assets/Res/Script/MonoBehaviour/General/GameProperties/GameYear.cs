@@ -23,7 +23,7 @@ public class GameYear {
         };
 
         List<string> WW2LateVehicleList = new List<string>() {
-            "T-54","T-44","IS-3"
+            "T-54","T-44","IS-3","KingTiger"
         };
 
         List<string> ColdWarVehicleList = new List<string>() {

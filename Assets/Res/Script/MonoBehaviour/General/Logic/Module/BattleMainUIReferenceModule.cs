@@ -9,6 +9,7 @@ public class BattleMainUIReferenceModule : MonoBehaviour {
 
     public Button[] AmmunitionAdders, AmmunitionMinusers;
 
+    public Button ExitGame,GameSetting;
     public InputField[] AmmunitionChangeFielders;
 
     public Image VehicleThumbnail;

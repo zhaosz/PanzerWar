@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: e942a82e2a5b84a689b6d6cf125ec110
+timeCreated: 1517037274
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MainBody.001
+    100004: MainBody.002
+    100006: MainBody.003
+    100008: MainBody.004
+    100010: MainBody.005
+    100012: MainBody.006
+    100014: MainBody.007
+    100016: MainBody.008
+    100018: MainBody.009
+    100020: Turret.001
+    100022: Turret.002
+    100024: Turret.003
+    100026: Turret.004
+    100028: Turret.005
+    100030: Turret.006
+    400000: //RootNode
+    400002: MainBody.001
+    400004: MainBody.002
+    400006: MainBody.003
+    400008: MainBody.004
+    400010: MainBody.005
+    400012: MainBody.006
+    400014: MainBody.007
+    400016: MainBody.008
+    400018: MainBody.009
+    400020: Turret.001
+    400022: Turret.002
+    400024: Turret.003
+    400026: Turret.004
+    400028: Turret.005
+    400030: Turret.006
+    2300000: MainBody.001
+    2300002: MainBody.002
+    2300004: MainBody.003
+    2300006: MainBody.004
+    2300008: MainBody.005
+    2300010: MainBody.006
+    2300012: MainBody.007
+    2300014: MainBody.008
+    2300016: MainBody.009
+    2300018: Turret.001
+    2300020: Turret.002
+    2300022: Turret.003
+    2300024: Turret.004
+    2300026: Turret.005
+    2300028: Turret.006
+    3300000: MainBody.001
+    3300002: MainBody.002
+    3300004: MainBody.003
+    3300006: MainBody.004
+    3300008: MainBody.005
+    3300010: MainBody.006
+    3300012: MainBody.007
+    3300014: MainBody.008
+    3300016: MainBody.009
+    3300018: Turret.001
+    3300020: Turret.002
+    3300022: Turret.003
+    3300024: Turret.004
+    3300026: Turret.005
+    3300028: Turret.006
+    4300000: Turret.006
+    4300002: Turret.005
+    4300004: Turret.004
+    4300006: Turret.003
+    4300008: MainBody.009
+    4300010: MainBody.008
+    4300012: MainBody.007
+    4300014: MainBody.006
+    4300016: MainBody.005
+    4300018: MainBody.004
+    4300020: MainBody.003
+    4300022: MainBody.002
+    4300024: Turret.002
+    4300026: MainBody.001
+    4300028: Turret.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.4
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

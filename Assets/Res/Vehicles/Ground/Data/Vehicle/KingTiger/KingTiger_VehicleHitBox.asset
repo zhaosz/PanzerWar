@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38dc38bd21154a418dc85f764272203, type: 3}
+  m_Name: KingTiger_VehicleHitBox
+  m_EditorClassIdentifier: 
+  ReferModel: {fileID: 0}
+  ExternalArmorModel: {fileID: 100000, guid: e942a82e2a5b84a689b6d6cf125ec110, type: 3}
+  HitBoxPrefab: {fileID: 1953500855925776, guid: 065decfbb52c540bda0a8d5d9eba64ea,
+    type: 2}

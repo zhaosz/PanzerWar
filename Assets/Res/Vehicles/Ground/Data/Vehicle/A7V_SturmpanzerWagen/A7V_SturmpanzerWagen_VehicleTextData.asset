@@ -107,7 +107,7 @@ MonoBehaviour:
     FireRecoil: 120
     AmmoCount: 30
     HasMachineGun: 0
-    bulletType: {fileID: 100018, guid: c5355401fd9142c4a9aa4db1488e5ec9, type: 2}
+    bulletType: {fileID: 100018, guid: 8beaf25dd612f4b958a7712eaa7c88cc, type: 2}
     GymAnimation: {fileID: 0}
     muzzleFire: 1
     fireState: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
     DownMaxDegree: 5
     turretDegreesPerSecond: 25
     gunDegreesPerSecond: 20
+    offset: 0
   PSParameter:
     Health: 90
     engineType: 2
